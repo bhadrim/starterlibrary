@@ -210,7 +210,7 @@ resource "aws_key_pair" "temp_public_key" {
 }
 
 resource "ibm_compute_ssh_key" "temp_public_key" {
-  label      = "${var.public_ssh_key_name}-temp"
+  label      = "temp-${var.public_ssh_key_name}"
   public_key = "${tls_private_key.ssh.public_key_openssh}"
 }
 
