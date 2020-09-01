@@ -105,9 +105,9 @@ resource "ibm_compute_vm_instance" "softlayer_virtual_guest" {
     content = <<EOF
 #!/bin/bash
 
-set -o errexit
-set -o nounset
-set -o pipefail
+#set -o errexit
+#set -o nounset
+#set -o pipefail
 
 LOGFILE="/var/log/install_mongodb_strongloop_angular_nodejs.log"
 
@@ -150,9 +150,9 @@ cd ruby-2.3.0
 make																			   >> $LOGFILE 2>&1 || { echo "---Failed to install node.js---"| tee -a $LOGFILE; exit 1; }
 sudo make install																   >> $LOGFILE 2>&1 || { echo "---Failed to install node.js---"| tee -a $LOGFILE; exit 1; }
 echo "---start installing compass---" | tee -a $LOGFILE 2>&1
-set +e
+
 gem install -V compass                                                               >> $LOGFILE 2>&1
-set -e
+
 echo "---finish installing compass and angularjs---" | tee -a $LOGFILE 2>&1
 
 #install strongloop
