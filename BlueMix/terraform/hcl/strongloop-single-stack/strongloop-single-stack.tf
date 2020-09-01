@@ -105,9 +105,9 @@ resource "ibm_compute_vm_instance" "softlayer_virtual_guest" {
     content = <<EOF
 #!/bin/bash
 
-#set -o errexit
-#set -o nounset
-#set -o pipefail
+set -o errexit
+set -o nounset
+set -o pipefail
 
 LOGFILE="/var/log/install_mongodb_strongloop_angular_nodejs.log"
 
@@ -443,11 +443,11 @@ EOF
   }
 
   # Execute the script remotely
-  provisioner "remote-exec" {
-    inline = [
-      "chmod +x /tmp/installation.sh; bash /tmp/installation.sh",
-    ]
-  }
+  #provisioner "remote-exec" {
+  #  inline = [
+  #    "chmod +x /tmp/installation.sh; bash /tmp/installation.sh",
+  #  ]
+  #}
 }
 
 #########################################################
