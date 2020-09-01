@@ -441,11 +441,11 @@ EOF
   }
 
   # Execute the script remotely
-  #provisioner "remote-exec" {
-  #  inline = [
-  #    "chmod +x /tmp/installation.sh; bash /tmp/installation.sh",
-  #  ]
-  #}
+  provisioner "remote-exec" {
+    inline = [
+      "chmod +x /tmp/installation.sh; bash /tmp/installation.sh",
+    ]
+  }
 }
 
 #########################################################
