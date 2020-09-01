@@ -150,7 +150,9 @@ cd ruby-2.3.0
 make																			   >> $LOGFILE 2>&1 || { echo "---Failed to install node.js---"| tee -a $LOGFILE; exit 1; }
 sudo make install																   >> $LOGFILE 2>&1 || { echo "---Failed to install node.js---"| tee -a $LOGFILE; exit 1; }
 echo "---start installing compass---" | tee -a $LOGFILE 2>&1
-gem install -V compass                                                               | tee -a $LOGFILE 2>&1
+set +e
+gem install -V compass                                                               >> $LOGFILE 2>&1
+set -e
 echo "---finish installing compass and angularjs---" | tee -a $LOGFILE 2>&1
 
 #install strongloop
