@@ -144,15 +144,23 @@ echo "---start installing ruby pre-reqs---" | tee -a $LOGFILE 2>&1
 yum install curl gpg gcc gcc-c++ make patch autoconf automake bison libffi-devel libtool patch readline-devel sqlite-devel zlib-devel openssl-devel gdbm -y >> $LOGFILE 2>&1 || { echo "---Failed to install ruby pre-reqs---" | tee -a $LOGFILE; exit 1; }
 echo "---Download, make and install ruby 2.7.0---" | tee -a $LOGFILE 2>&1
 wget https://cache.ruby-lang.org/pub/ruby/2.7/ruby-2.7.1.tar.gz
+echo $?
+echo "---untar ruby 2.7.0---" | tee -a $LOGFILE 2>&1
 tar -zxvf ruby-2.7.1.tar.gz
+echo $?
 cd ruby-2.7.1
-./configure																		   
-make																			   
-make install																   
+echo "---configire ruby 2.7.0---" | tee -a $LOGFILE 2>&1
+./configure
+echo $?
+echo "---make ruby 2.7.0---" | tee -a $LOGFILE 2>&1
+make		
+echo $?
+echo "---make install ruby 2.7.0---" | tee -a $LOGFILE 2>&1
+make install	
+echo $?
 echo "---start installing compass---" | tee -a $LOGFILE 2>&1
-
 gem install -V compass                                                               
-
+echo $?
 echo "---finish installing compass and angularjs---" | tee -a $LOGFILE 2>&1
 
 #install strongloop
