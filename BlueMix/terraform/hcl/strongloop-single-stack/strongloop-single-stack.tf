@@ -146,12 +146,12 @@ echo "---Download, make and install ruby 2.7.0---" | tee -a $LOGFILE 2>&1
 wget https://cache.ruby-lang.org/pub/ruby/2.7/ruby-2.7.1.tar.gz
 tar -zxvf ruby-2.7.1.tar.gz
 cd ruby-2.7.1
-./configure																		   >> $LOGFILE 2>&1 || { echo "---Failed to install node.js---"| tee -a $LOGFILE; exit 1; }
-make																			   >> $LOGFILE 2>&1 || { echo "---Failed to install node.js---"| tee -a $LOGFILE; exit 1; }
-make install																   >> $LOGFILE 2>&1 || { echo "---Failed to install node.js---"| tee -a $LOGFILE; exit 1; }
+./configure																		   
+make																			   
+make install																   
 echo "---start installing compass---" | tee -a $LOGFILE 2>&1
 
-gem install -V compass                                                               >> $LOGFILE 2>&1 || { echo "---Failed to install compass---" | tee -a $LOGFILE; exit 1; }
+gem install -V compass                                                               
 
 echo "---finish installing compass and angularjs---" | tee -a $LOGFILE 2>&1
 
