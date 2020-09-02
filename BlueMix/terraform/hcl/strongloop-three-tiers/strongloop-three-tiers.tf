@@ -776,11 +776,11 @@ EOF
   }
 
   # Execute the script remotely
-  provisioner "remote-exec" {
-    inline = [
-      "chmod +x /tmp/installation.sh; bash /tmp/installation.sh \"${ibm_compute_vm_instance.strongloop_vm.ipv4_address}\"",
-    ]
-  }
+  #provisioner "remote-exec" {
+  #  inline = [
+  #    "chmod +x /tmp/installation.sh; bash /tmp/installation.sh \"${ibm_compute_vm_instance.strongloop_vm.ipv4_address}\"",
+  #  ]
+  #}
 }
 
 #########################################################
