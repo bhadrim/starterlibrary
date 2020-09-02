@@ -150,16 +150,16 @@ tar -zxvf ruby-2.7.1.tar.gz
 echo $?
 cd ruby-2.7.1
 echo "---configire ruby 2.7.0---" | tee -a $LOGFILE 2>&1
-./configure
+./configure >> $LOGFILE 2>&1 
 echo $?
 echo "---make ruby 2.7.0---" | tee -a $LOGFILE 2>&1
-make		
+make >> $LOGFILE 2>&1 
 echo $?
 echo "---make install ruby 2.7.0---" | tee -a $LOGFILE 2>&1
-make install	
+make install >> $LOGFILE 2>&1 
 echo $?
 echo "---start installing compass---" | tee -a $LOGFILE 2>&1
-gem install -V compass                                                               
+gem install -V compass >> $LOGFILE 2>&1                                                               
 echo $?
 echo "---finish installing compass and angularjs---" | tee -a $LOGFILE 2>&1
 
