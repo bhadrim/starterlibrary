@@ -28,7 +28,7 @@ variable "aws_region" {
 variable "MQNode01-mgmt-network-public" {
   type = "string"
   description = "Expose and use public IP of virtual machine for internal communication"
-  default = "true"
+  default = "false"
 }
 
 variable "vpc_name_tag" {
