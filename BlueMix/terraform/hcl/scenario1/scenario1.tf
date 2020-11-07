@@ -7,6 +7,12 @@ module "camtags" {
 variable "public_ssh_key" {
   description = "Public SSH key used to connect to the virtual guest"
 }
+  
+variable "MQNode01-mgmt-network-public" {
+  type = "string"
+  description = "Expose and use public IP of virtual machine for internal communication"
+  default = "true"
+}
 
 variable "datacenter" {
   description = "Softlayer datacenter where infrastructure resources will be deployed"
@@ -49,4 +55,8 @@ resource "ibm_compute_vm_instance" "debian_small_virtual_guest" {
 
 output "vm_ip" {
   value = "Public : ${ibm_compute_vm_instance.debian_small_virtual_guest.ipv4_address}"
+}
+  
+  output "MQNode01_webconsole" {
+  value = "https://${var.MQNode01-mgmt-network-public == "false" ? ibm_compute_vm_instance.debian_small_virtual_guest.ipv4_address_private : ibm_compute_vm_instance.debian_small_virtual_guest.ipv4_address}:9443/ibmmq/console."
 }
