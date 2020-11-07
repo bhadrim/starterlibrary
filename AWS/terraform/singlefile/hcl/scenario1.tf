@@ -24,6 +24,12 @@ variable "aws_region" {
   description = "AWS region to launch servers."
   default     = "us-east-1"
 }
+  
+variable "MQNode01-mgmt-network-public" {
+  type = "string"
+  description = "Expose and use public IP of virtual machine for internal communication"
+  default = "true"
+}
 
 variable "vpc_name_tag" {
   description = "Name of the Virtual Private Cloud (VPC) this resource is going to be deployed into"
@@ -97,4 +103,8 @@ resource "aws_instance" "orpheus_ubuntu_micro" {
   subnet_id     = "${data.aws_subnet.selected.id}"
   key_name      = "${aws_key_pair.orpheus_public_key.id}"
   tags          = "${module.camtags.tagsmap}"
+}
+  
+output "MQNode01_webconsole" {
+  value = "https://${var.MQNode01-mgmt-network-public == "false" ? aws_instance.orpheus_ubuntu_micro.private_ip : aws_instance.orpheus_ubuntu_micro.public_ip}:9443/ibmmq/console."
 }
