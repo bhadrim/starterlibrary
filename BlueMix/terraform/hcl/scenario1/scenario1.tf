@@ -11,7 +11,7 @@ variable "public_ssh_key" {
 variable "MQNode01-mgmt-network-public" {
   type = "string"
   description = "Expose and use public IP of virtual machine for internal communication"
-  default = "true"
+  default = "false"
 }
 
 variable "datacenter" {
@@ -54,7 +54,7 @@ resource "ibm_compute_vm_instance" "debian_small_virtual_guest" {
 }
 
 output "vm_ip" {
-  value = "Public : ${ibm_compute_vm_instance.debian_small_virtual_guest.ipv4_address}"
+  value = "Public : ${ibm_compute_vm_instance.debian_small_virtual_guest.ipv4_address} Private: ${ibm_compute_vm_instance.debian_small_virtual_guest.ipv4_address_private}"
 }
   
   output "MQNode01_webconsole" {
