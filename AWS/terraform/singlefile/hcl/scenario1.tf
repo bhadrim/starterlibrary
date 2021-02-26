@@ -109,6 +109,11 @@ resource "aws_instance" "orpheus_ubuntu_micro" {
     },
   )
 }
+  
+resource "aws_eip" "ip" {
+    vpc = true
+    instance = aws_instance.orpheus_ubuntu_micro.id
+}
 
 output "ip_address" {
   value = length(aws_instance.orpheus_ubuntu_micro.public_ip) > 0 ? aws_instance.orpheus_ubuntu_micro.public_ip : aws_instance.orpheus_ubuntu_micro.private_ip
