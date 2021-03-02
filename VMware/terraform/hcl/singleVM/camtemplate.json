@@ -1,5 +1,5 @@
 {
-  "name": "SingleVirtualMachine",
+  "name": "SingleVirtualMachine vSphere 7 Test",
   "description": "Create Virtual Machine with single vnic",
   "type": "prebuilt",
   "version": "1.0",
