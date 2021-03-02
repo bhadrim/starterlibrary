@@ -228,7 +228,7 @@
       "group_name": "virtualmachine"
     },
     {
-      "name": "vm_1_ipv4_address2",
+      "name": "vm_1_ipv4_address_2",
       "type": "string",
       "description": "IPv4 address 2 for vNIC configuration",
       "hidden": false,
