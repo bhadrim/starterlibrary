@@ -228,6 +228,17 @@
       "group_name": "virtualmachine"
     },
     {
+      "name": "vm_1_ipv4_address2",
+      "type": "string",
+      "description": "IPv4 address 2 for vNIC configuration",
+      "hidden": false,
+      "label": "Virtual Machine IP Address - vm_1",
+      "secured": false,
+      "required": true,
+      "immutable": false,
+      "group_name": "virtualmachine"
+    },    
+    {
       "name": "vm_1_memory",
       "type": "string",
       "description": "Memory assigned to the virtual machine in megabytes. This value is required to be an increment of 1024",
