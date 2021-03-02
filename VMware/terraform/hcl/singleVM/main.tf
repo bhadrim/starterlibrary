@@ -116,6 +116,10 @@ variable "vm_1_ipv4_address" {
   description = "IPv4 address for vNIC configuration"
 }
 
+variable "vm_1_ipv4_address_2" {
+  description = "IPv4 address2 for vNIC configuration"
+}
+
 variable "vm_1_ipv4_prefix_length" {
   description = "IPv4 prefix length for vNIC configuration. The value must be a number between 8 and 32"
 }
@@ -180,6 +184,11 @@ resource "vsphere_virtual_machine" "vm_1" {
         ipv4_address = var.vm_1_ipv4_address
         ipv4_netmask = var.vm_1_ipv4_prefix_length
       }
+      
+      network_interface {
+        ipv4_address = var.vm_1_ipv4_address_2
+        ipv4_netmask = var.vm_1_ipv4_prefix_length
+      }      
 
       ipv4_gateway    = var.vm_1_ipv4_gateway
       dns_suffix_list = var.vm_1_dns_suffixes
@@ -191,6 +200,11 @@ resource "vsphere_virtual_machine" "vm_1" {
     network_id   = data.vsphere_network.vm_1_network.id
     adapter_type = var.vm_1_adapter_type
   }
+  
+  network_interface {
+    network_id   = data.vsphere_network.vm_1_network.id
+    adapter_type = var.vm_1_adapter_type
+  }  
 
   disk {
     label          = "${var.vm_1_name}0.vmdk"
