@@ -1,5 +1,5 @@
 {
-  "name": "SingleWindowsVirtualMachine",
+  "name": "SingleWindowsVirtualMachineV7Test",
   "description": "Create Windows Virtual Machine with single vnic",
   "type": "prebuilt",
   "version": "1.0",
