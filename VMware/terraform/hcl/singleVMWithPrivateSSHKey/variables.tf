@@ -35,6 +35,10 @@ variable "vm_ipv4_address" {
   type = string
 }
 
+variable "vm_ipv4_address_2" {
+  type = string
+}
+
 variable "vm_memory" {
   type = string
 }
