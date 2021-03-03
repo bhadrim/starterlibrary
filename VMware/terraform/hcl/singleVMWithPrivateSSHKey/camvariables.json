@@ -95,6 +95,17 @@
       "group_name": "custom_vm_attributes"
     },
     {
+      "name": "vm_ipv4_address_2",
+      "type": "string",
+      "description": "IPv4 address for vNIC configuration",
+      "hidden": false,
+      "label": "Virtual Machine IP Address 2",
+      "secured": false,
+      "required": true,
+      "immutable": false,
+      "group_name": "custom_vm_attributes"
+    },    
+    {
       "name": "vm_memory",
       "label": "VM Memory Allocation (MB)",
       "type": "string",
