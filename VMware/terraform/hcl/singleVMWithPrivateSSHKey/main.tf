@@ -77,6 +77,11 @@ resource "vsphere_virtual_machine" "vm" {
         ipv4_netmask = var.vm_ipv4_netmask
       }
 
+      network_interface {
+        ipv4_address = var.vm_ipv4_address_2
+        ipv4_netmask = var.vm_ipv4_netmask
+      }
+      
       ipv4_gateway    = var.vm_ipv4_gateway
       dns_suffix_list = var.dns_suffixes
       dns_server_list = var.dns_servers
@@ -87,6 +92,11 @@ resource "vsphere_virtual_machine" "vm" {
     network_id   = data.vsphere_network.vm_network.id
     adapter_type = var.adapter_type
   }
+  
+  network_interface {
+    network_id   = data.vsphere_network.vm_network.id
+    adapter_type = var.adapter_type
+  }  
 
   disk {
     label          = "${var.vm_name}.vmdk"
