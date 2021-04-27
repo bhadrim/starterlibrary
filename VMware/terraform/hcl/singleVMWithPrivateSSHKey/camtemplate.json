@@ -1,6 +1,6 @@
 {
-  "name": "Single Virtual Machine DHCP with Private SSH Key",
-  "description": "Create Virtual Machine and outputs a generated private SSH key",
+  "name": "Single Virtual Machine DHCP",
+  "description": "Create Virtual Machine using DHCP",
   "type": "prebuilt",
   "version": "1.0",
   "manifest": {
@@ -20,8 +20,8 @@
     }
   },
   "metadata": {
-      "displayName": "Single Virtual Machine with Private SSh Key",
-      "longDescription": "Create Virtual Machine and outputs a generated private SSH key",
+      "displayName": "Single Virtual Machine DHCP",
+      "longDescription": "Create Virtual Machine using DHCP",
       "bullets": [
        {
          "title": "Clouds",
